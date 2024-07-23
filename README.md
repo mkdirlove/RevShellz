@@ -50,17 +50,9 @@ options:
 ```
 #### Example
 
-Listing reverse shells for Linux
+Listing reverse shells
 ```
-python3 revshellz.py -l linux
-```
-Listing reverse shells for Windows
-```
-python3 revshellz.py -l windows
-```
-Listing reverse shells for MacOS
-```
-python3 revshellz.py -l macos
+python3 revshellz.py -l linux, windows, macos
 ```
 
 #### Example
