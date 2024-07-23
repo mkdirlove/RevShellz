@@ -80,7 +80,7 @@ def main():
     print(f"{bcolors.BLUE}{bcolors.BOLD}     Made with ❤️  by {bcolors.FAIL}@mkdirlove\n{bcolors.ENDC}{bcolors.GREEN}")
 
     # Create the parser
-    parser = argparse.ArgumentParser(description='Process IP address, port, operating system, and reverse shell type.')
+    parser = argparse.ArgumentParser(description='RevShellz - Yet another reverse shell generator written in Python.')
 
     # Add the arguments
     parser.add_argument('-ip', '--ip_add', type=str, help='IP address')
