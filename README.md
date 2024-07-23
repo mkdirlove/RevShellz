@@ -1,6 +1,7 @@
 <h1 align="center">
   <br>
-  <a href="https://github.com/mkdirlove/RevShellz"><img src="https://github.com/mkdirlove/RevShellz/blob/main/logo.png" alt="OCRify"></a>
+  <a href="https://github.com/mkdirlove/RevShellz"><img src="https://github.com/mkdirlove/RevShellz/blob/main/logo.png" alt="RevShellz
+"></a>
   <br>
   Yet another reverse shell generator written in Python.
   <br>
@@ -33,7 +34,7 @@ python3 revshellz.py -h
 
 usage: revshellz.py [-h] [-ip IP_ADD] [-p PORT] [-os OPERATING_SYS] [-rs REV_SHELL] [-l LIST]
 
-Process IP address, port, operating system, and reverse shell type.
+RevShellz - Yet another reverse shell generator written in Python.
 
 options:
   -h, --help            show this help message and exit
@@ -49,7 +50,22 @@ options:
 ```
 #### Example
 
-Using local file as input
+Listing reverse shells for Linux
 ```
-python3 OCRify.py --filename sample.png --output result.txt
+python3 revshellz.py -l linux
+```
+Listing reverse shells for Windows
+```
+python3 revshellz.py -l windows
+```
+Listing reverse shells for MacOS
+```
+python3 revshellz.py -l macos
+```
+
+#### Example
+
+Generating reverse shell
+```
+python3 revshellz.py -ip 10.10.10.1 -p 1337 -rs 'bash -i' -os linux
 ```
