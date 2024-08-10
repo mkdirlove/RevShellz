@@ -7,6 +7,12 @@
   <br>
 </h1>
 
+
+## Contributors
+
+<!-- readme: collaborators,contributors -start -->
+<!-- readme: collaborators,contributors -end -->
+
 #### About
 ```
 Initially developed by mkdirlove and enhanced by me (veilwr4ith), is a reverse shell payload generator compatible with Linux, Windows, and macOS.
