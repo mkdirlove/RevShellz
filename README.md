@@ -7,18 +7,9 @@
   <br>
 </h1>
 
-
-## Contributors
-
-<!-- readme: collaborators,contributors -start -->
-<!-- readme: collaborators,contributors -end -->
-
 #### About
 ```
-Initially developed by mkdirlove and enhanced by me (veilwr4ith), is a reverse shell payload generator compatible with Linux, Windows, and macOS.
-The updated version includes new features such as Base64 and URL encoding for payloads, which helps avoid straightforward detection by making them less immediately recognizable.
-This is particularly useful for Capture The Flag (CTF) challenges with payload restrictions.
-Additionally, I've incorporated various payloads into the tool's dictionary, including Python-based payloads, Lua, and msfvenom options for Metasploit.
+Initially developed by mkdirlove and enhanced by me (veilwr4ith), is a reverse shell payload generator compatible with Linux, Windows, and macOS. The updated version includes new features such as Base64 and URL encoding for payloads, which helps avoid straightforward detection by making them less immediately recognizable. This is particularly useful for Capture The Flag (CTF) challenges with payload restrictions. Additionally, I've incorporated various payloads into the tool's dictionary, including Python-based payloads, Lua, and msfvenom options for Metasploit.
 ```
 
 #### Installation
