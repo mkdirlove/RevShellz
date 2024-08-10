@@ -8,7 +8,7 @@
 </h1>
 
 <a href="https://github.com/mkdirlove/RevShellz/graphs/contributors">
-  <img src="https://opencollective.com/html-react-parser/contributors.svg?width=890&button=false">
+  <img src="https://opencollective.com/mkdirlove/RevShellz/contributors.svg?width=890&button=false">
 </a>
 
 #### About
