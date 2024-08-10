@@ -1,6 +1,6 @@
 import os
 import pyfiglet
-import argparse
+import typer
 
 # Term colors
 class bcolors:
@@ -13,7 +13,7 @@ class bcolors:
     ENDC = '\033[0m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
-    
+
 # Define the reverse shell examples
 reverse_shells = {
     'linux': {
@@ -50,59 +50,44 @@ reverse_shells = {
     }
 }
 
-def list_reverse_shells(os_category):
+def list_reverse_shells(os_category: str):
     """List available reverse shells for a given OS category."""
     os_category = os_category.lower()
     if os_category in reverse_shells:
-        print(f"Available reverse shell types for {os_category.capitalize()}:")
+        typer.echo(f"Available reverse shell types for {os_category.capitalize()}:")
         for key in reverse_shells[os_category]:
-            print(f"- {key}")
+            typer.echo(f"- {key}")
     else:
-        print(f"No reverse shells available for OS category: {os_category}")
+        typer.echo(f"No reverse shells available for OS category: {os_category}")
 
-def generate_reverse_shells(ip, port, os_category, shell_type):
+def generate_reverse_shells(ip: str, port: int, os_category: str, shell_type: str):
     """Generate reverse shell commands based on provided arguments."""
     os_category = os_category.lower()
     if os_category in reverse_shells and shell_type in reverse_shells[os_category]:
         command = reverse_shells[os_category][shell_type]
-        # Print the values of the arguments
-        print(f'{bcolors.GREEN}{bcolors.BOLD}IP Address:{bcolors.ENDC}{bcolors.BLUE} {ip}')
-        print(f'{bcolors.GREEN}{bcolors.BOLD}Port:{bcolors.ENDC}{bcolors.BLUE} {port}')
-        print(f'{bcolors.GREEN}{bcolors.BOLD}Traget Operating System:{bcolors.ENDC}{bcolors.BLUE} {os_category.capitalize()}')
-        print(f"{bcolors.GREEN}{bcolors.BOLD}Reverse shell command for {os_category.capitalize()} ({shell_type}):\n{bcolors.BLUE}")
-        print(command.format(ip, port))
+        typer.secho(f"IP Address: {ip}", fg=typer.colors.GREEN, bold=True)
+        typer.secho(f"Port: {port}", fg=typer.colors.GREEN, bold=True)
+        typer.secho(f"Target Operating System: {os_category.capitalize()}", fg=typer.colors.GREEN, bold=True)
+        typer.secho(f"Reverse Shell Type: {shell_type}", fg=typer.colors.GREEN, bold=True)
+        typer.echo(f"{bcolors.WARNING}Command: {command.format(ip, port)}{bcolors.ENDC}")
     else:
-        print(f"No command found for OS: {os_category} and reverse shell type: {shell_type}")
+        typer.echo(f"No matching reverse shell type for OS category '{os_category}' and shell type '{shell_type}'")
 
-def main():
-    # Print the banner
-    os.system("clear")
-    banner = pyfiglet.figlet_format("RevShellz", font="pagga")
-    print(f"{bcolors.WARNING}"+banner)
-    print(f"{bcolors.BLUE}{bcolors.BOLD}     Made with ❤️  by {bcolors.FAIL}@mkdirlove\n{bcolors.ENDC}{bcolors.GREEN}")
-
-    # Create the parser
-    parser = argparse.ArgumentParser(description='RevShellz - Yet another reverse shell generator written in Python.')
-
-    # Add the arguments
-    parser.add_argument('-ip', '--ip_add', type=str, help='IP address')
-    parser.add_argument('-p', '--port', type=int, help='Port number')
-    parser.add_argument('-os', '--operating_sys', type=str, help='Operating system')
-    parser.add_argument('-rs', '--rev_shell', type=str, help='Reverse shell type')
-    parser.add_argument('-l', '--list', type=str, help='List available reverse shells by OS category')
-
-    # Parse the arguments
-    args = parser.parse_args()
-
-    if args.list:
-        list_reverse_shells(args.list.lower())
-        return
-
-    if not (args.ip_add and args.port and args.operating_sys and args.rev_shell):
-        parser.error('IP address, port, operating system, and reverse shell type are required unless listing.')
-
-    # Generate and print the reverse shell command
-    generate_reverse_shells(args.ip_add, args.port, args.operating_sys, args.rev_shell)
+def main(ip: str = typer.Option(..., help="IP address of the listener."),
+         port: int = typer.Option(..., help="Port number of the listener."),
+         os_category: str = typer.Option("linux", help="Operating system of the target. Default is 'linux'."),
+         list_shells: bool = typer.Option(False, help="List all available shells for the target OS."),
+         shell_type: str = typer.Option(None, help="Specific reverse shell type to generate.")):
+    """Generate Reverse Shell Commands based on Target OS."""
+    print(pyfiglet.figlet_format("RevShellGen", font="slant"))
+    
+    if list_shells:
+        list_reverse_shells(os_category)
+    else:
+        if shell_type:
+            generate_reverse_shells(ip, port, os_category, shell_type)
+        else:
+            typer.echo("Please specify a reverse shell type using --shell-type or list available shells using --list-shells.")
 
 if __name__ == "__main__":
-    main()
+    typer.run(main)
