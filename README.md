@@ -5,15 +5,18 @@
   <br>
   Yet another reverse shell generator written in Python.
   <br>
-<a href="https://github.com/mkdirlove/RevShellz/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=mkdirlove/RevShellz" />
-</a>
 </h1>
 
 #### About
 ```
 Initially developed by mkdirlove and enhanced by me (veilwr4ith), is a reverse shell payload generator compatible with Linux, Windows, and macOS. The updated version includes new features such as Base64 and URL encoding for payloads, which helps avoid straightforward detection by making them less immediately recognizable. This is particularly useful for Capture The Flag (CTF) challenges with payload restrictions. Additionally, I've incorporated various payloads into the tool's dictionary, including Python-based payloads, Lua, and msfvenom options for Metasploit.
 ```
+
+#### COntributors
+
+<a href="https://github.com/mkdirlove/RevShellz/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=mkdirlove/RevShellz" />
+</a>
 
 #### Installation
 
