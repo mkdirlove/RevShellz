@@ -85,6 +85,4 @@ Generating reverse shell with Base64 Encoding
 python3 revshellz.py -ip 10.10.10.1 -p 1337 -rs 'nc mkfifo' -os linux -enc base64
 ```
 
-<a href = "https://github.com/Tanu-N-Prabhu/Python/graphs/contributors">
-  <img src = "https://contrib.rocks/image?repo = mkdirlove/RevShellz"/>
-</a>
+[![](https://opencollective.com/html-react-parser/contributors.svg?width=890&button=false)](https://github.com/remarkablemark/html-react-parser/graphs/contributors)
