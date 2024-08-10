@@ -43,7 +43,7 @@ python3 revshellz.py -h
 
 Made with ❤️  by @mkdirlovee & @veilwr4ith
 
-usage: test.py [-h] [-ip IPADDRESS] [-p PORT] [-os OPERATING_SYSTEM] [-pl PAYLOAD] [-l LIST] [-enc ENCODE]
+usage: revshellz.py [-h] [-ip IPADDRESS] [-p PORT] [-os OPERATING_SYSTEM] [-pl PAYLOAD] [-l LIST] [-enc ENCODE]
 
 RevShellz: Yet another reverse shell generator written in Python.
 
