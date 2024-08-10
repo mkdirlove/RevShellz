@@ -26,26 +26,28 @@ python3 revshellz.py -h
 ```
 #### Usage
 ``` 
-░█▀▄░█▀▀░█░█░█▀▀░█░█░█▀▀░█░░░█░░░▀▀█
+░█▀▄░█▀▀░█░█░█▀▀░█░█░█▀▀░█░░░█░░░▀▀█ v2.0-dev
 ░█▀▄░█▀▀░▀▄▀░▀▀█░█▀█░█▀▀░█░░░█░░░▄▀░
-░▀░▀░▀▀▀░░▀░░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀
+░▀░▀░▀▀▀░░▀░░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀ 
 
-     Made with ❤️  by @mkdirlove
+Made with ❤️  by @mkdirlovee & @veilwr4ith
 
-usage: revshellz.py [-h] [-ip IP_ADD] [-p PORT] [-os OPERATING_SYS] [-rs REV_SHELL] [-l LIST]
+usage: test.py [-h] [-ip IPADDRESS] [-p PORT] [-os OPERATING_SYSTEM] [-pl PAYLOAD] [-l LIST] [-enc ENCODE]
 
-RevShellz - Yet another reverse shell generator written in Python.
+RevShellz: Yet another reverse shell generator written in Python.
 
 options:
   -h, --help            show this help message and exit
-  -ip IP_ADD, --ip_add IP_ADD
-                        IP address
-  -p PORT, --port PORT  Port number
-  -os OPERATING_SYS, --operating_sys OPERATING_SYS
-                        Operating system
-  -rs REV_SHELL, --rev_shell REV_SHELL
-                        Reverse shell type
-  -l LIST, --list LIST  List available reverse shells by OS category
+  -ip IPADDRESS, --ipaddress IPADDRESS
+                        Target IP address
+  -p PORT, --port PORT  Target port number
+  -os OPERATING_SYSTEM, --operating-system OPERATING_SYSTEM
+                        Target operating system (linux, windows, macos)
+  -pl PAYLOAD, --payload PAYLOAD
+                        Payload for reverse shell
+  -l LIST, --list LIST  List available reverse shell payload types for the specified OS
+  -enc ENCODE, --encode ENCODE
+                        Encode the payload in Base64 or URL
 
 ```
 #### Example
@@ -68,4 +70,12 @@ python3 revshellz.py -ip 10.10.10.1 -p 1337 -rs 'PowerShell #1' -os windows
 Generating reverse shell for MacOS
 ```
 python3 revshellz.py -ip 10.10.10.1 -p 1337 -rs 'nc mkfifo' -os linux
+```
+Generating reverse shell with URL Encoding
+```
+python3 revshellz.py -ip 10.10.10.1 -p 1337 -rs 'nc mkfifo' -os linux -enc url
+```
+Generating reverse shell with Base64 Encoding
+```
+python3 revshellz.py -ip 10.10.10.1 -p 1337 -rs 'nc mkfifo' -os linux -enc base64
 ```
